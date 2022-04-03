@@ -1,0 +1,25 @@
+﻿// this the manifest for you pack
+// it contains basic information about your pack
+// for more info on the manifest check: https://github.com/black-sliver/PopTracker/blob/master/doc/PACKS.md#manifest
+{
+  "name": "Template Pack for PopTracker",
+  "game_name": "<put your game title here>",
+  "package_version": "1.0.0.0",
+  "package_uid": "template_pack",
+  "platform": "snes", //enables SNES memory autotracking interface - remove/change if not needed
+  "author": "Cyb3R",
+  "variants": {
+    "standard": {
+      "display_name": "Map Tracker",
+      "flags": [
+        "ap" //enables AP autotracking interface - remove if not needed
+      ]
+    },
+    "var_itemsonly": {
+     "display_name": "Items Only",
+     "flags": [
+       "ap" //enables AP autotracking interface - remove if not needed
+     ]
+    }
+  }
+}
