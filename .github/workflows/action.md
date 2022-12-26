@@ -16,4 +16,4 @@ This is the pack validation action I use to automatically validate json against 
 
 It uses the [PopTracker pack-checker-action](https://github.com/PopTracker/pack-checker-action).
 
-Triggers whenever a push or pull request including changes to any json file are made.
+Triggers whenever a push or pull request including changes to any json file are made. Can also be run manually.
