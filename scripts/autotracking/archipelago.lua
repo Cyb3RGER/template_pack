@@ -71,6 +71,9 @@ function onItem(index, item_id, item_name, player_number)
     if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
         print(string.format("called onItem: %s, %s, %s, %s, %s", index, item_id, item_name, player_number, CUR_INDEX))
     end
+    if not AUTOTRACKER_ENABLE_ITEM_TRACKING then
+        return
+    end
     if index <= CUR_INDEX then
         return
     end
@@ -130,10 +133,13 @@ function onItem(index, item_id, item_name, player_number)
     end
 end
 
---called when a location gets cleared
+-- called when a location gets cleared
 function onLocation(location_id, location_name)
     if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
         print(string.format("called onLocation: %s, %s", location_id, location_name))
+    end
+    if not AUTOTRACKER_ENABLE_LOCATION_TRACKING then
+        return
     end
     local v = LOCATION_MAPPING[location_id]
     if not v and AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
@@ -174,7 +180,11 @@ end
 -- add AP callbacks
 -- un-/comment as needed
 Archipelago:AddClearHandler("clear handler", onClear)
-Archipelago:AddItemHandler("item handler", onItem)
-Archipelago:AddLocationHandler("location handler", onLocation)
+if AUTOTRACKER_ENABLE_ITEM_TRACKING then
+    Archipelago:AddItemHandler("item handler", onItem)
+end
+if AUTOTRACKER_ENABLE_LOCATION_TRACKING then
+    Archipelago:AddLocationHandler("location handler", onLocation)
+end
 -- Archipelago:AddScoutHandler("scout handler", onScout)
 -- Archipelago:AddBouncedHandler("bounce handler", onBounce)
