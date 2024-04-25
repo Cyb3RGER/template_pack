@@ -1,5 +1,3 @@
-// sets layouts for shadred items grids
-// bigger example: https://github.com/Cyb3RGER/sm_ap_tracker/blob/main/layouts/items.json
 {
     "shared_item_grid": {
         "type": "array",
@@ -8,7 +6,7 @@
         "content": [
             {
                 "type": "array",
-                "orientation": "horizontal",
+                "orientation": "vertical",
                 "margin": "0,0",
                 "content": [
                     {
@@ -17,12 +15,16 @@
                         "h_alignment": "left",
                         "rows": [
                             [
-                                "toggle",
-                                "progressive"           
+                                "AshTop", "ClothTop", "CrystalTop", "LightningTop", "MetalTop", "OilTop", "SandTop", "WaterTop", "WaxTop", "WoodTop"         
                             ],
                             [
-                                "consumable",
-                                "progressive_toggle"
+                                "AshBottom", "ClothBottom", "CrystalBottom", "LightningBottom", "MetalBottom", "OilBottom", "SandBottom", "WaterBottom", "WaxBottom", "WoodBottom"
+                            ],
+                            [
+                                "FrontKey", "LakeKey", "OfficeElKey", "BedElKey", "BedKey", "WorkshopKey", "OfficeKey", "LibraryKey", "MechKey", "ThreeElKey", "Crawling"
+                            ],
+                            [
+                                "PlanetKey", "BathKey", "TortureKey", "PuzzleKey", "BeastKey", "OceanKey", "PlantKey", "ProjKey", "EgyptKey", "ShamanKey"
                             ]
                         ]
                     }

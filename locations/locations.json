@@ -1,57 +1,242 @@
 [
     {
-        "name": "Example Parent",
+        "name": "Ixupi Captures",
         "children": [
             {
-                "name": "Example Location 1",
-                "access_rules": [
-                    //read as: progressive_2 or toggle                    
-                    "progressive_2",
-                    "toggle"                    
-                ],
+                "name": "Ash Ixupi",
+                "access_rules": ["AshTop, AshBottom, $can_capture_ash"],
                 "sections": [
                     {
-                        "name": "Example Section 1",
+                        "name": "Ash Ixupi Captured",
                         "item_count": 1
-                    },
-                    {
-                        "name": "Example Section 2",
-                        "item_count": 3
                     }
                 ],
                 "map_locations": [
                     {
-                        "map": "map1",
-                        "x": 1750,
-                        "y": 700
+                        "map": "Main Floor",
+                        "x": 135,
+                        "y": 149
                     },
                     {
-                        "map": "map2",
-                        "x": 1000,
-                        "y": 500
+                        "map": "Second Floor",
+                        "x": 150,
+                        "y": 190
                     }
                 ]
             },
             {
-                "name": "Example Location 2",
-                "access_rules": [
-                    //read as: progressive_toggle_2 and has more then 4 consumable
-                    "progressive_toggle_2, $has_more_then_n_consumable|4"                   
-                ],
+                "name": "Cloth Ixupi",
+                "access_rules": ["ClothTop, ClothBottom, $can_capture_cloth"],
                 "sections": [
                     {
-                        "name": "Example Section 1",
+                        "name": "Cloth Ixupi Captured",
                         "item_count": 1
                     }
                 ],
                 "map_locations": [
                     {
-                        "map": "map1",
-                        "x": 1500,
-                        "y": 400
+                        "map": "Second Floor",
+                        "x": 300,
+                        "y": 220
+                    },
+                    {
+                        "map": "Second Floor",
+                        "x": 287,
+                        "y": 40
                     }
                 ]
-            }            
+            },
+            {
+                "name": "Crystal Ixupi",
+                "access_rules": ["CrystalTop, CrystalBottom, $can_capture_crystal"],
+                "sections": [
+                    {
+                        "name": "Crystal Ixupi Captured",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Basement",
+                        "x": 60,
+                        "y": 270
+                    },
+                    {
+                        "map": "Second Floor",
+                        "x": 260,
+                        "y": 290
+                    }
+                ]
+            },
+            {
+                "name": "Lightning Ixupi",
+                "access_rules": ["LightningTop, LightningBottom, $can_capture_lightning"],
+                "sections": [
+                    {
+                        "name": "Lightning Ixupi Captured",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Basement",
+                        "x": 400,
+                        "y": 150
+                    }
+                ]
+            },
+            {
+                "name": "Metal Ixupi",
+                "access_rules": ["MetalTop, MetalBottom, $can_capture_metal"],
+                "sections": [
+                    {
+                        "name": "Metal Ixupi Captured",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 152,
+                        "y": 165
+                    },
+                    {
+                        "map": "Main Floor",
+                        "x": 307,
+                        "y": 190
+                    },
+                    {
+                        "map": "Fourth Floor",
+                        "x": 65,
+                        "y": 125
+                    }
+                ]
+            },
+            {
+                "name": "Oil Ixupi",
+                "access_rules": ["OilTop, OilBottom, $can_capture_oil"],
+                "sections": [
+                    {
+                        "name": "Oil Ixupi Captured",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 165,
+                        "y": 280
+                    },
+                    {
+                        "map": "Basement",
+                        "x": 195,
+                        "y": 265
+                    }
+                ]
+            },
+            {
+                "name": "Sand Ixupi",
+                "access_rules": ["SandTop, SandBottom, $can_capture_sand"],
+                "sections": [
+                    {
+                        "name": "Sand Ixupi Captured",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 57,
+                        "y": 225
+                    },
+                    {
+                        "map": "Basement",
+                        "x": 85,
+                        "y": 227
+                    }
+                ]
+            },
+            {
+                "name": "Water Ixupi",
+                "access_rules": ["WaterTop, WaterBottom, $can_capture_water"],
+                "sections": [
+                    {
+                        "name": "Water Ixupi Captured",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 277,
+                        "y": 125
+                    },
+                    {
+                        "map": "Second Floor",
+                        "x": 297,
+                        "y": 67
+                    }
+                ]
+            },
+            {
+                "name": "Wax Ixupi",
+                "access_rules": ["WaxTop, WaxBottom, $can_capture_wax"],
+                "sections": [
+                    {
+                        "name": "Wax Ixupi Captured",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 285,
+                        "y": 70
+                    },
+                    {
+                        "map": "Second Floor",
+                        "x": 170,
+                        "y": 170
+                    },
+                    {
+                        "map": "Second Floor",
+                        "x": 242,
+                        "y": 178
+                    }
+                ]
+            },
+            {
+                "name": "Wood Ixupi",
+                "access_rules": ["WoodTop, WoodBottom, $can_capture_wood"],
+                "sections": [
+                    {
+                        "name": "Wood Ixupi Captured",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 100,
+                        "y": 115
+                    },
+                    {
+                        "map": "Second Floor",
+                        "x": 310,
+                        "y": 165
+                    },
+                    {
+                        "map": "Second Floor",
+                        "x": 170,
+                        "y": 100
+                    },
+                    {
+                        "map": "Second Floor",
+                        "x": 210,
+                        "y": 160
+                    }
+                ]
+            }
         ]
     }
 ]

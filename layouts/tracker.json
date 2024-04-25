@@ -1,7 +1,4 @@
-﻿//sets the trackers layout
-//more info: https://github.com/black-sliver/PopTracker/blob/master/doc/PACKS.md#layouts 
-{
-    "tracker_default": {
+﻿{    "tracker_default": {
         "type": "container",
         "background": "#000000",
         "content": {
@@ -28,21 +25,42 @@
                     "type": "tabbed",
                     "tabs": [
                         {
-                            "title": "Map 1",
+                            "title": "Outside",
+                            "content": {
+                                "type": "map",
+                                "maps": ["Outside Museum"]
+                            }
+                        },
+                        {
+                            "title": "Basement",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "map1"
+                                    "Basement"
                                 ]
                             }
                         },
                         {
-                            "title": "Map 2",
+                            "title": "Main Floor",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "map2"
+                                    "Main Floor"
                                 ]
+                            }
+                        },
+                        {
+                            "title": "2nd Floor",
+                            "content": {
+                                "type": "map",
+                                "maps": ["Second Floor"]
+                            }
+                        },
+                        {
+                            "title": "3rd Floor",
+                            "content": {
+                                "type": "map",
+                                "maps": ["Third Floor"]
                             }
                         }
                     ]
@@ -79,20 +97,54 @@
                     "type": "tabbed",
                     "tabs": [
                         {
-                            "title": "Map 1",
+                            "title": "Outside",
+                            "content": {
+                                "type": "map",
+                                "maps": ["Outside Museum"]
+                            }
+                        },
+                        {
+                            "title": "Basement",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "map1"
+                                    "Basement"
                                 ]
                             }
                         },
                         {
-                            "title": "Map 2",
+                            "title": "Main Floor",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "map2"
+                                    "Main Floor"
+                                ]
+                            }
+                        },
+                        {
+                            "title": "Second Floor",
+                            "content": {
+                                "type": "map",
+                                "maps": [
+                                    "Second Floor"
+                                ]
+                            }
+                        },
+                        {
+                            "title": "Third Floor",
+                            "content": {
+                                "type": "map",
+                                "maps": [
+                                    "Third Floor"
+                                ]
+                            }
+                        },
+                        {
+                            "title": "Fourth Floor",
+                            "content": {
+                                "type": "map",
+                                "maps": [
+                                    "Fourth Floor"
                                 ]
                             }
                         }

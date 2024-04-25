@@ -1,15 +1,38 @@
-//more info: https://github.com/black-sliver/PopTracker/blob/master/doc/PACKS.md#maps
 [
     {
-        "name": "map1",
-        "location_size": 48,
-        "location_border_thickness": 4,
-        "img": "images/maps/map.png"
+        "name": "Outside Museum",
+        "location_size": 7,
+        "location_border_thickness": 1,
+        "img": "images/maps/outside_map.png"
     },
     {
-        "name": "map2",
-        "location_size": 48,
-        "location_border_thickness": 4,
-        "img": "images/maps/map_2.png"
+        "name": "Basement",
+        "location_size": 7,
+        "location_border_thickness": 1,
+        "img": "images/maps/basement_map.gif"
+    },
+    {
+        "name": "Main Floor",
+        "location_size": 7,
+        "location_border_thickness": 1,
+        "img": "images/maps/main_floor_map.gif"
+    },
+    {
+        "name": "Second Floor",
+        "location_size": 7,
+        "location_border_thickness": 1,
+        "img": "images/maps/second_floor_map.gif"
+    },
+    {
+        "name": "Third Floor",
+        "location_size": 7,
+        "location_border_thickness": 1,
+        "img": "images/maps/third_floor_map.gif"
+    },
+    {
+        "name": "Fourth Floor",
+        "location_size": 7,
+        "location_border_thickness": 1,
+        "img": "images/maps/fourth_floor_map.gif"
     }
 ]

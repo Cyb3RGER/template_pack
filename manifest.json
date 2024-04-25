@@ -1,13 +1,10 @@
-﻿// this the manifest for you pack
-// it contains basic information about your pack
-// for more info on the manifest check: https://github.com/black-sliver/PopTracker/blob/master/doc/PACKS.md#manifest
+﻿
 {
-    "name": "Template Pack for PopTracker",
-    "game_name": "<put your game title here>",
-    "package_version": "1.0.0.0",
-    "package_uid": "template_pack",
-    "platform": "snes", //enables SNES memory autotracking interface - remove/change if not needed
-    "author": "Cyb3R",
+    "name": "SHIVERS POPTRACKER PACK",
+    "game_name": "Shivers",
+    "package_version": "0.3",
+    "package_uid": "shivers_pack",
+    "author": "Jasbird",
     "variants": {
         "standard": {
             "display_name": "Map Tracker",
