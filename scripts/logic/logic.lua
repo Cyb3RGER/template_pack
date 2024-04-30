@@ -3,16 +3,10 @@ function has(item)
     return count > 0
 end
 
-function has_more_then_n_consumable(n)
-    local count = Tracker:ProviderCountForCode('consumable')
-    local val = (count > tonumber(n))
-    if ENABLE_DEBUG_LOG then
-        print(string.format("called has_more_then_n_consumable: count: %s, n: %s, val: %s", count, n, val))
-    end
-    if val then
-        return 1 -- 1 => access is in logic
-    end
-    return 0 -- 0 => no access
+-- LAKE ACCESS:
+-- lake key, *or* Front + Office Elevator + Office
+function has_lake_access()
+    return has("LakeKey") or (has("FrontKey") and has("OfficeKey") and has("OfficeElKey"))
 end
 
 -- LOBBY ACCESS:
@@ -70,7 +64,7 @@ function corridor_from_theater()
     return has_lobby_access() and has("Crawling")
 end
 function corridor_from_maze()
-    return (maze_from_egypt() and has("ThreeElKey")
+    return maze_from_egypt() and has("ThreeElKey")
 end
 
 -- GENERATOR ACCESS:
@@ -128,7 +122,7 @@ function myths_from_planets()
 end
 
 -- BATHROOM ACCESS:
--- from myths room: direct path, no  needed
+-- from myths room: direct path
 -- from planetarium: direct door
 function has_bathroom_access() -- from myths room or from planetarium
     return (has_shaman_access() or has_planets_access()) and has("BathKey")
@@ -222,5 +216,5 @@ function can_capture_wax() -- LIBRARY, SHAMAN, MYTHS
 end
 
 function can_capture_wood() -- MAZE, MYTHS, GODS, WORKSHOP
-    return has_workshop_access() or has_maze_access() or has_myth_access()  or has_shaman_access() 
+    return has_workshop_access() or has_maze_access() or has_myth_access() or has_shaman_access() 
 end
