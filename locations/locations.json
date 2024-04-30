@@ -3,11 +3,11 @@
         "name": "Ixupi Captures",
         "children": [
             {
-                "name": "Ash Ixupi",
+                "name": "Ash Ixupi Captured",
                 "access_rules": ["AshTop, AshBottom, $can_capture_ash"],
                 "sections": [
                     {
-                        "name": "Ash Ixupi Captured",
+                        "name": "",
                         "item_count": 1
                     }
                 ],
@@ -25,11 +25,11 @@
                 ]
             },
             {
-                "name": "Cloth Ixupi",
+                "name": "Cloth Ixupi Captured",
                 "access_rules": ["ClothTop, ClothBottom, $can_capture_cloth"],
                 "sections": [
                     {
-                        "name": "Cloth Ixupi Captured",
+                        "name": "",
                         "item_count": 1
                     }
                 ],
@@ -41,17 +41,22 @@
                     },
                     {
                         "map": "Second Floor",
+                        "x": 120,
+                        "y": 240
+                    },
+                    {
+                        "map": "Second Floor",
                         "x": 287,
                         "y": 40
                     }
                 ]
             },
             {
-                "name": "Crystal Ixupi",
+                "name": "Crystal Ixupi Captured",
                 "access_rules": ["CrystalTop, CrystalBottom, $can_capture_crystal"],
                 "sections": [
                     {
-                        "name": "Crystal Ixupi Captured",
+                        "name": "",
                         "item_count": 1
                     }
                 ],
@@ -69,11 +74,11 @@
                 ]
             },
             {
-                "name": "Lightning Ixupi",
+                "name": "Lightning Ixupi Captured",
                 "access_rules": ["LightningTop, LightningBottom, $can_capture_lightning"],
                 "sections": [
                     {
-                        "name": "Lightning Ixupi Captured",
+                        "name": "",
                         "item_count": 1
                     }
                 ],
@@ -86,11 +91,11 @@
                 ]
             },
             {
-                "name": "Metal Ixupi",
+                "name": "Metal Ixupi Captured",
                 "access_rules": ["MetalTop, MetalBottom, $can_capture_metal"],
                 "sections": [
                     {
-                        "name": "Metal Ixupi Captured",
+                        "name": "",
                         "item_count": 1
                     }
                 ],
@@ -113,11 +118,11 @@
                 ]
             },
             {
-                "name": "Oil Ixupi",
+                "name": "Oil Ixupi Captured",
                 "access_rules": ["OilTop, OilBottom, $can_capture_oil"],
                 "sections": [
                     {
-                        "name": "Oil Ixupi Captured",
+                        "name": "",
                         "item_count": 1
                     }
                 ],
@@ -135,11 +140,11 @@
                 ]
             },
             {
-                "name": "Sand Ixupi",
+                "name": "Sand Ixupi Captured",
                 "access_rules": ["SandTop, SandBottom, $can_capture_sand"],
                 "sections": [
                     {
-                        "name": "Sand Ixupi Captured",
+                        "name": "",
                         "item_count": 1
                     }
                 ],
@@ -157,11 +162,11 @@
                 ]
             },
             {
-                "name": "Water Ixupi",
+                "name": "Water Ixupi Captured",
                 "access_rules": ["WaterTop, WaterBottom, $can_capture_water"],
                 "sections": [
                     {
-                        "name": "Water Ixupi Captured",
+                        "name": "",
                         "item_count": 1
                     }
                 ],
@@ -179,11 +184,11 @@
                 ]
             },
             {
-                "name": "Wax Ixupi",
+                "name": "Wax Ixupi Captured",
                 "access_rules": ["WaxTop, WaxBottom, $can_capture_wax"],
                 "sections": [
                     {
-                        "name": "Wax Ixupi Captured",
+                        "name": "",
                         "item_count": 1
                     }
                 ],
@@ -206,11 +211,11 @@
                 ]
             },
             {
-                "name": "Wood Ixupi",
+                "name": "Wood Ixupi Captured",
                 "access_rules": ["WoodTop, WoodBottom, $can_capture_wood"],
                 "sections": [
                     {
-                        "name": "Wood Ixupi Captured",
+                        "name": "",
                         "item_count": 1
                     }
                 ],
@@ -234,6 +239,852 @@
                         "map": "Second Floor",
                         "x": 210,
                         "y": 160
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Puzzles & Hints",
+        "children": [
+            {
+                "name": "Outside",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "Combo Lock in Mailbox",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Orange Symbol",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Silver Symbol",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Green Symbol",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "White Symbol",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Brown Symbol",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Tan Symbol",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Gears Solved",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Stonehenge Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Outside Museum",
+                        "x": 250,
+                        "y": 225
+                    }
+                ]
+            },
+            {
+                "name": "Underground Lake",
+                "access_rules": ["$has_lake_access"],
+                "sections": [
+                    {
+                        "name": "Windlenot's Ghost Flashback",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Egyptian Hieroglyphs Explained Flashback",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Basement",
+                        "x": 200,
+                        "y": 100
+                    }
+                ]
+            },
+            {
+                "name": "Office Elevator",
+                "access_rules": ["$has_lake_access", "$has_office_access"],
+                "sections": [
+                    {
+                        "name": "",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Basement",
+                        "x": 140,
+                        "y": 50
+                    },
+                    {
+                        "map": "Main Floor",
+                        "x": 112,
+                        "y": 57
+                    }
+                ]
+            },
+            {
+                "name": "Office",
+                "access_rules": ["$has_office_access"],
+                "sections": [
+                    {
+                        "name": "Scrapbook Flashback",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Atlantis Map",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Tape Recorder",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 140,
+                        "y": 110
+                    }
+                ]
+            },
+            {
+                "name": "Bedroom Elevator",
+                "access_rules": ["$has_office_access, Crawling"],
+                "sections": [
+                    {
+                        "name": "",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 172,
+                        "y": 118
+                    },
+                    {
+                        "map": "Fourth Floor",
+                        "x": 170,
+                        "y": 135
+                    }
+                ]
+            },
+            {
+                "name": "Bedroom",
+                "access_rules": ["$has_bedroom_access"],
+                "sections": [
+                    {
+                        "name": "Progessor Windlenot's Diary",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Fourth Floor",
+                        "x": 90,
+                        "y": 145
+                    }
+                ]
+            },
+            {
+                "name": "Workshop",
+                "access_rules": ["$has_workshop_access"],
+                "sections": [
+                    {
+                        "name": "Basilisk Bone Fragments",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Drawers Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 60,
+                        "y": 130
+                    }
+                ]
+            },
+            {
+                "name": "Library",
+                "access_rules": ["$has_library_access"],
+                "sections": [
+                    {
+                        "name": "In Search of the Unexplained Flashback",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "South American Pictographs Flashback",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Mythology of the Stars Flashback",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Black Book Flashback",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Statue Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 240,
+                        "y": 70
+                    }
+                ]
+            },
+            {
+                "name": "Maintenance Tunnels",
+                "access_rules": ["$has_back_corridor_access"],
+                "sections": [
+                    {
+                        "name": "Beth's Address Book Flashback",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 250,
+                        "y": 35
+                    }
+                ]
+            },
+            {
+                "name": "Three Floor Elevator",
+                "access_rules": ["$has_back_corridor_access, ThreeElKey", "$has_maze_access, ThreeElKey"],
+                "sections": [
+                    {
+                        "name": "",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Writing",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 175,
+                        "y": 52
+                    },
+                    {
+                        "map": "Second Floor",
+                        "x": 190,
+                        "y": 40
+                    },
+                    {
+                        "map": "Third Floor",
+                        "x": 180,
+                        "y": 45
+                    }
+                ]
+            },
+            {
+                "name": "Lobby",
+                "access_rules": ["$has_lobby_access"],
+                "sections": [
+                    {
+                        "name": "Museum Brochure Flashback",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Jade Skull",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Transforming Masks",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Theater Door Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 240,
+                        "y": 180
+                    }
+                ]
+            },
+            {
+                "name": "Generator Room",
+                "access_rules": ["$has_generator_access"],
+                "sections": [
+                    {
+                        "name": "Final Riddle Page 17",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Basement",
+                        "x": 380,
+                        "y": 100
+                    }
+                ]
+            },
+            {
+                "name": "Theater Halls",
+                "access_rules": ["$has_lobby_access"],
+                "sections": [
+                    {
+                        "name": "Clock Tower Door Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 380,
+                        "y": 145
+                    }
+                ]
+            },
+            {
+                "name": "Clock Tower Stairs",
+                "access_rules": ["$has_lobby_access"],
+                "sections": [
+                    {
+                        "name": "Clock Chains Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 400,
+                        "y": 135
+                    },
+                    {
+                        "map": "Second Floor",
+                        "x": 400,
+                        "y": 120
+                    },
+                    {
+                        "map": "Third Floor",
+                        "x": 385,
+                        "y": 117
+                    }
+                ]
+            },
+            {
+                "name": "Clock Tower",
+                "access_rules": ["$has_lobby_access"],
+                "sections": [
+                    {
+                        "name": "Beth's Ghost Flashback",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Shaman Security Camera",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Fourth Floor",
+                        "x": 385,
+                        "y": 118
+                    }
+                ]
+            },
+            {
+                "name": "Projector Room",
+                "access_rules": ["$has_projector_access"],
+                "sections": [
+                    {
+                        "name": "Theater Movie Flashback",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                   {
+                        "map": "Main Floor",
+                        "x": 303,
+                        "y": 200
+                   }
+                ]
+            },
+            {
+                "name": "Mysteries of the Deep",
+                "access_rules": ["$has_ocean_access"],
+                "sections": [
+                    {
+                        "name": "Museum Blueprints Flashback",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Sirens Song Heard",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Quartz Crystal",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Poseidon",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Colossus of Rhodes",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Poseidon's Temple",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Atlantis Solved",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Organ Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Basement",
+                        "x": 80,
+                        "y": 250
+                    }
+                ]
+            },
+            {
+                "name": "Subterranean World",
+                "access_rules": ["$has_ocean_access"],
+                "sections": [
+                    {
+                        "name": "Info: Subterranean World",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Dero",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Door Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Basement",
+                        "x": 220,
+                        "y": 250
+                    }
+                ]
+            },
+            {
+                "name": "Tombs & Curses",
+                "access_rules": ["$has_egypt_access"],
+                "sections": [
+                    {
+                        "name": "Sphinx Heard",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Tomb of the Ixupi",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: The Sphinx",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Curse of Anubis",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Columns of Ra Solved",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Burial Door Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Second Floor",
+                        "x": 260,
+                        "y": 240
+                    }
+                ]
+            },
+            {
+                "name": "Funeral Rites",
+                "access_rules": ["$has_burial_access"],
+                "sections": [
+                    {
+                        "name": "Merrick's Notebook Flashback",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Norse Burial Ship",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Paracas Burial Bundles",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Spectacular Coffins of Ghana",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Animal Crematorium",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Cremation",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Chinese Solitaire Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Second Floor",
+                        "x": 140,
+                        "y": 240
+                    }
+                ]
+            },
+            {
+                "name": "Shaman",
+                "access_rules": ["$has_shaman_access"],
+                "sections": [
+                    {
+                        "name": "Info: Witch Doctors of the Congo",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Sarombe Doctor of Mozambique",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Drums Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Second Floor",
+                        "x": 125,
+                        "y": 150
+                    }
+                ]
+            },
+            {
+                "name": "Gods & Religious Items",
+                "access_rules": ["$has_shaman_access"],
+                "sections": [
+                    {
+                        "name": "Info: Fisherman's Canoe God",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Mayan Gods",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Thor",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Celtic Janus Sculpture",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Sumerian Bull God - An",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Sumerian Lyre",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Chuen",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Red Door Solved",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Lyre Solved",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Final Riddle Stone Message",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Second Floor",
+                        "x": 228,
+                        "y": 50
+                    }
+                ]
+            },
+            {
+                "name": "Blue Maze",
+                "access_rules": ["$has_maze_access"],
+                "sections": [
+                    {
+                        "name": "Fortune Teller Door Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Second Floor",
+                        "x": 230,
+                        "y": 160
+                    },
+                    {
+                        "map": "Third Floor",
+                        "x": 106,
+                        "y": 100
+                    }
+                ]
+            },
+            {
+                "name": "Fortune Teller",
+                "access_rules": ["$has_maze_access"],
+                "sections": [
+                    {
+                        "name": "Merrick's Ghost Flashback",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Final Riddle",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Second Floor",
+                        "x": 210,
+                        "y": 140
+                    }
+                ]
+            },
+            {
+                "name": "Strange Inventions",
+                "access_rules": ["$has_inventions_access"],
+                "sections": [
+                    {
+                        "name": "Alchemy Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Third Floor",
+                        "x": 120,
+                        "y": 220
+                    }
+                ]
+            },
+            {
+                "name": "Planetarium",
+                "access_rules": ["$has_planets_access"],
+                "sections": [
+                    {
+                        "name": "Info: Coincidence or Extraterrestrial Visits?",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Planets",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Astronomical Construction",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Aliens",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "UFO Symbols Solved",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Final Riddle Planets",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Third Floor",
+                        "x": 232,
+                        "y": 128
+                    }
+                ]
+            },
+            {
+                "name": "Myths & Legends",
+                "access_rules": ["$has_myth_access"],
+                "sections": [
+                    {
+                        "name": "Ancient Astrology Flashback",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: African Creation Myth",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Apophis the Serpent",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Death",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Cyclops",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Lycanthropy",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Music Box Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Second Floor",
+                        "x": 290,
+                        "y": 100
+                    }
+                ]
+            },
+            {
+                "name": "Man's Inhumanity to Man",
+                "access_rules": ["$has_torture_access"],
+                "sections": [
+                    {
+                        "name": "Info: Gallows",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Guillotine",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Gallows Solved",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Final Riddle Guillotine",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Third Floor",
+                        "x": 220,
+                        "y": 250
+                    }
+                ]
+            },
+            {
+                "name": "Puzzle Room",
+                "access_rules": ["$has_puzzle_access"],
+                "sections": [
+                    {
+                        "name": "Info: Mastermind",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Mastermind Solved",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Marble Flipper Solved",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Skull Dial Door Solved",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Third Floor",
+                        "x": 300,
+                        "y": 180
+                    }
+                ]
+            },
+            {
+                "name": "Strange Beasts",
+                "access_rules": ["$has_beast_access"],
+                "sections": [
+                    {
+                        "name": "Info: Bronze Unicorn",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Griffin",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Eagles' Nest",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Large Spider",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Info: Starfish",
+                        "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Main Floor",
+                        "x": 140,
+                        "y": 225
                     }
                 ]
             }
