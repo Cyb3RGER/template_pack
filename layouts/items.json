@@ -13,6 +13,7 @@
                         "type": "itemgrid",
                         "item_margin": "10, 10",
                         "h_alignment": "left",
+                        "item_size": "5, 5",
                         "rows": [
                             [
                                 "AshTop", "ClothTop", "CrystalTop", "LightningTop", "MetalTop", "OilTop", "SandTop", "WaterTop", "WaxTop", "WoodTop"         
