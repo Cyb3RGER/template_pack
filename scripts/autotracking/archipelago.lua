@@ -11,6 +11,32 @@ SLOT_DATA = nil
 LOCAL_ITEMS = {}
 GLOBAL_ITEMS = {}
 
+function onClearHandler(slot_data)
+    clear_timer = os.clock()
+    -- Disable tracker updates.
+    Tracker.BulkUpdate = true
+    -- Use a protected call so that tracker updates always get enabled again, even if an error occurred.
+    local ok, err = pcall(onClear, slot_data)
+    -- Enable tracker updates again.
+    if ok then
+        -- Defer re-enabling tracker updates until the next frame, which doesn't happen until all received items/cleared
+        -- locations from AP have been processed.
+        local handlerName = "AP onClearHandler"
+        local function frameCallback()
+            ScriptHost:RemoveOnFrameHandler(handlerName)
+            Tracker.BulkUpdate = false
+            forceUpdate()
+            print(string.format("Time taken: %.2f", os.clock() - clear_timer))
+        end
+        ScriptHost:AddOnFrameHandler(handlerName, frameCallback)
+    else
+        Tracker.BulkUpdate = false
+        print("Error: onClear failed:")
+        print(err)
+    end
+end
+
+
 function onClear(slot_data)
     if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
         print(string.format("called onClear, slot_data:\n%s", dump_table(slot_data)))
@@ -179,7 +205,7 @@ end
 
 -- add AP callbacks
 -- un-/comment as needed
-Archipelago:AddClearHandler("clear handler", onClear)
+Archipelago:AddClearHandler("clear handler", onClearHandler)
 if AUTOTRACKER_ENABLE_ITEM_TRACKING then
     Archipelago:AddItemHandler("item handler", onItem)
 end
