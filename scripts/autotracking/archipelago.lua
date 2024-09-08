@@ -12,7 +12,7 @@ LOCAL_ITEMS = {}
 GLOBAL_ITEMS = {}
 
 function onClearHandler(slot_data)
-    clear_timer = os.clock()
+    local clear_timer = os.clock()
     -- Disable tracker updates.
     Tracker.BulkUpdate = true
     -- Use a protected call so that tracker updates always get enabled again, even if an error occurred.
