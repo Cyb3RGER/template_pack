@@ -1,6 +1,7 @@
 # Custom items via Lua API
 
-This custom item is using an example from the [Evermizer tracker pack](https://github.com/Cyb3RGER/evermizer-tracker-package)
+This custom item is using an example from
+the [Evermizer tracker pack](https://github.com/Cyb3RGER/evermizer-tracker-package)
 
 It creates and extend version of a ``progressive_toggle`` item
 
