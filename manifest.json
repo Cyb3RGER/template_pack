@@ -10,7 +10,8 @@
   "platform": "snes",
   "author": "Cyb3R",
   "min_poptracker_version": "0.25.9",
-  "target_poptracker_version": "<put the version you tested against here>",
+  // put the version you tested against here!
+  "target_poptracker_version": "0.28.0",
   "variants": {
     "standard": {
       "display_name": "Map Tracker",
