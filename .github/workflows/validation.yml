@@ -4,9 +4,11 @@ on:
   push:
     paths:
       - '**.json'
+      - '**.jsonc'
   pull_request:
     paths:
       - '**.json'
+      - '**.jsonc'
 jobs:
   validation:
     runs-on: ubuntu-latest
