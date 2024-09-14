@@ -5,10 +5,12 @@ on:
     paths:
       - '**.json'
       - '**.jsonc'
+      - '!.luarc.json'
   pull_request:
     paths:
       - '**.json'
       - '**.jsonc'
+      - '!.luarc.json'
 jobs:
   validation:
     runs-on: ubuntu-latest
