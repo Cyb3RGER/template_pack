@@ -13,9 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2.6.0
       - name: Validate pack (lax)
-        uses: PopTracker/pack-checker-action@v1
+        uses: PopTracker/pack-checker-action@v1.2.0
       - name: Validate pack (strict)
-        uses: PopTracker/pack-checker-action@v1
+        uses: PopTracker/pack-checker-action@v1.2.0
         with:
           strict: true
   
