@@ -10,10 +10,12 @@ This is the discord webhook action I use to automatically post updates of my pac
 
 Requires the Webhook URL to be placed in a repo secret on github named ``DISCORD_WEBHOOK_URL``.
 
-## validation.yml
+## validation-lax/strict.yml
 
-This is the pack validation action I use to automatically validate json against the offical PopTracker schemas.
+This action automatically validates JSON against official PopTracker schemas using
+the [PopTracker pack-checker-action](https://github.com/PopTracker/pack-checker-action).
 
-It uses the [PopTracker pack-checker-action](https://github.com/PopTracker/pack-checker-action).
+You can select validation with either the [lax](https://poptracker.github.io/schema/packs/)
+or [strict](https://poptracker.github.io/schema/packs/strict/) schema.
 
-Triggers whenever a push or pull request including changes to any json file are made. Can also be run manually.
+It triggers on push or pull requests, and can also be run manually.

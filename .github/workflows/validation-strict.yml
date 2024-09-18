@@ -1,25 +1,18 @@
-name: Pack validation
+name: Pack validation (strict)
 on:
   workflow_dispatch:
   push:
     paths:
-      - '**.json'
-      - '**.jsonc'
-      - '!.luarc.json'
+      - '!**.md'
   pull_request:
     paths:
-      - '**.json'
-      - '**.jsonc'
-      - '!.luarc.json'
+      - '!**.md'
 jobs:
   validation:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Validate pack (lax)
-        uses: PopTracker/pack-checker-action@v1
       - name: Validate pack (strict)
         uses: PopTracker/pack-checker-action@v1
         with:
           strict: true
-  
