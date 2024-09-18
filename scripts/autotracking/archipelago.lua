@@ -3,6 +3,7 @@
 -- it will also keep track of the current index of on_item messages in CUR_INDEX
 -- addition it will keep track of what items are local items and which one are remote using the globals LOCAL_ITEMS and GLOBAL_ITEMS
 -- this is useful since remote items will not reset but local items might
+-- if you run into issues when touching A LOT of items/locations here, see the comment about Tracker.AllowDeferredLogicUpdate in autotracking.lua
 ScriptHost:LoadScript("scripts/autotracking/item_mapping.lua")
 ScriptHost:LoadScript("scripts/autotracking/location_mapping.lua")
 
@@ -83,9 +84,7 @@ end
 -- called right after an AP slot is connected
 function onClear(slot_data)
 	-- use bulk update to pause logic updates until we are done resetting all items/locations
-	Tracker.BulkUpdate = true
-	-- uncomment this to use `Tracker.AllowDeferredLogicUpdate` to defer logic updates, which might be needed if you touch A LOT of items/locations during onClear
-	-- if Tracker.AllowDeferredLogicUpdate == false then Tracker.AllowDeferredLogicUpdate = true end
+	Tracker.BulkUpdate = true	
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("called onClear, slot_data:\n%s", dump_table(slot_data)))
 	end
