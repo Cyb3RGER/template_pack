@@ -7,7 +7,7 @@ function update_example(segment)
     if not AUTOTRACKER_ENABLE_ITEM_TRACKING then
         return
     end
-    local readResult = segment:ReadUInt8(EXAMPLE_ADDR) -- prefered way of reading
+    local readResult = segment:ReadUInt8(EXAMPLE_ADDR) -- preferred way of reading
     local readResult2 = AutoTracker:ReadU16(EXAMPLE_ADDR + 0x1) -- alternative way of reading  
     if AUTOTRACKER_ENABLE_DEBUG_LOGGING_SNES then
         print(string.format("update_example: readResult: %x, readResult2: %x", readResult, readResult2))

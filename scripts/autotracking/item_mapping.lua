@@ -1,5 +1,5 @@
 -- use this file to map the AP item ids to your items
--- first value is the code of the target item and the second is the item type override (feel free to expand the table with any other values you might need (i.e. special inital values, increments, etc.)!)
+-- first value is the code of the target item and the second is the item type override (feel free to expand the table with any other values you might need (i.e. special initial values, increments, etc.)!)
 -- here are the SM items as an example: https://github.com/Cyb3RGER/sm_ap_tracker/blob/main/scripts/autotracking/item_mapping.lua
 BASE_ITEM_ID = 0
 ITEM_MAPPING = {
