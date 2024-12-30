@@ -43,7 +43,7 @@ function resetItem(item_code, item_type)
 end
 
 -- advances the state of an item
-function incrementItem(item_code, item_type)
+function incrementItem(item_code, item_type, multiplier)
 	local obj = Tracker:FindObjectForCode(item_code)
 	if obj then
 		item_type = item_type or obj.Type
@@ -59,7 +59,7 @@ function incrementItem(item_code, item_type)
 				obj.Active = true
 			end
 		elseif item_type == "consumable" then
-			obj.AcquiredCount = obj.AcquiredCount + obj.Increment
+			obj.AcquiredCount = obj.AcquiredCount + obj.Increment * multiplier
 		elseif item_type == "custom" then
 			-- your code for your custom lua items goes here
 		elseif item_type == "static" and AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
@@ -168,8 +168,9 @@ function onItem(index, item_id, item_name, player_number)
 		if item_table then
 			local item_code = item_table[1]
 			local item_type = item_table[2]
+			local multiplier = item_table[3] or 1
 			if item_code then
-				incrementItem(item_code, item_type)
+				incrementItem(item_code, item_type, multiplier)
 				-- keep track which items we touch are local and which are global
 				if is_local then
 					if LOCAL_ITEMS[item_code] then
