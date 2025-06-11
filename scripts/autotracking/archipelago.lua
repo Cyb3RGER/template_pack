@@ -6,10 +6,33 @@
 -- if you run into issues when touching A LOT of items/locations here, see the comment about Tracker.AllowDeferredLogicUpdate in autotracking.lua
 ScriptHost:LoadScript("scripts/autotracking/item_mapping.lua")
 ScriptHost:LoadScript("scripts/autotracking/location_mapping.lua")
+-- used for hint tracking to quickly map hint status to a value from the Highlight enum
+HINT_STATUS_MAPPING = {}
+if Highlight then
+	HINT_STATUS_MAPPING = {
+		[20] = Highlight.Avoid,
+		[40] = Highlight.None,
+		[10] = Highlight.NoPriority,
+		[0] = Highlight.Unspecified,
+		[30] = Highlight.Priority,
+	}
+end
 
 CUR_INDEX = -1
 LOCAL_ITEMS = {}
 GLOBAL_ITEMS = {}
+
+-- gets the data storage key for hints for the current player
+-- returns nil when not connected to AP
+function getHintDataStorageKey()
+	if AutoTracker:GetConnectionState("AP") ~= 3 or Archipelago.TeamNumber == nil or Archipelago.TeamNumber == -1 or Archipelago.PlayerNumber == nil or Archipelago.PlayerNumber == -1 then
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
+			print("Tried to call getHintDataStorageKey while not connect to AP server")
+		end
+		return nil
+	end
+	return string.format("_read_hints_%s_%s", Archipelago.TeamNumber, Archipelago.PlayerNumber)
+end
 
 -- resets an item to its initial state
 function resetItem(item_code, item_type)
@@ -84,7 +107,7 @@ end
 -- called right after an AP slot is connected
 function onClear(slot_data)
 	-- use bulk update to pause logic updates until we are done resetting all items/locations
-	Tracker.BulkUpdate = true	
+	Tracker.BulkUpdate = true
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 		print(string.format("called onClear, slot_data:\n%s", dump_table(slot_data)))
 	end
@@ -102,6 +125,9 @@ function onClear(slot_data)
 						local obj = Tracker:FindObjectForCode(location_code)
 						if obj then
 							obj.AvailableChestCount = obj.ChestCount
+							if obj.Highlight then
+								obj.Highlight = Highlight.None
+							end
 						elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
 							print(string.format("onClear: could not find location object for code %s", location_code))
 						end
@@ -141,6 +167,17 @@ function onClear(slot_data)
 	if PopVersion < "0.20.1" or AutoTracker:GetConnectionState("SNES") == 3 then
 		-- add snes interface functions here
 	end
+	-- setup data storage tracking for hint tracking
+	local data_strorage_keys = {}
+	if PopVersion >= "0.32.0" then
+		data_strorage_keys = { getHintDataStorageKey() }
+	end
+	-- subscribes to the data storage keys for updates
+	-- triggers callback in the SetNotify handler on update
+	Archipelago:SetNotify(data_strorage_keys)
+	-- gets the current value for the data storage keys
+	-- triggers callback in the Retrieved handler when result is received
+	Archipelago:Get(data_strorage_keys)
 	Tracker.BulkUpdate = false
 end
 
@@ -156,7 +193,7 @@ function onItem(index, item_id, item_name, player_number)
 		return
 	end
 	local is_local = player_number == Archipelago.PlayerNumber
-	CUR_INDEX = index;
+	CUR_INDEX = index
 	local mapping_entry = ITEM_MAPPING[item_id]
 	if not mapping_entry then
 		if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
@@ -259,6 +296,98 @@ function onBounce(json)
 	-- your code goes here
 end
 
+-- called whenever Archipelago:Get returns data from the data storage or
+-- whenever a subscribed to (via Archipelago:SetNotify) key in data storgae is updated
+-- oldValue might be nil (always nil for "_read" prefixed keys and via retrieved handler (from Archipelago:Get))
+function onDataStorageUpdate(key, value, oldValue)
+	--if you plan to only use the hints key, you can remove this if
+	if key == getHintDataStorageKey() then
+		onHintsUpdate(value)
+	end
+end
+
+-- called whenever the hints key in data storage updated
+-- NOTE: this should correctly handle having multiple mapped locations in a section.
+--       if you only map sections 1 to 1 you can simplfy this. for an example see
+--       https://github.com/Cyb3RGER/sm_ap_tracker/blob/main/scripts/autotracking/archipelago.lua
+function onHintsUpdate(hints)
+	-- Highlight is only supported since version 0.32.0
+	if PopVersion < "0.32.0" or not AUTOTRACKER_ENABLE_LOCATION_TRACKING then
+		return
+	end
+	local player_number = Archipelago.PlayerNumber
+	-- get all new highlight values per section
+	local sections_to_update = {}
+	for _, hint in ipairs(hints) do
+		-- we only care about hints in our world
+		if hint.finding_player == player_number then
+			updateHint(hint, sections_to_update)
+		end
+	end
+	-- update the sections
+	for location_code, highlight_code in pairs(sections_to_update) do
+		-- find the location object
+		local obj = Tracker:FindObjectForCode(location_code)
+		-- check if we got the location and if it supports Highlight
+		if obj and obj.Highlight then
+			obj.Highlight = highlight_code
+		end
+	end
+end
+
+-- update section highlight based on the hint
+function updateHint(hint, sections_to_update)
+	-- get the highlight enum value for the hint status
+	local hint_status = hint.status
+	local highlight_code = nil
+	if hint_status then
+		highlight_code = HINT_STATUS_MAPPING[hint_status]
+	end
+	if not highlight_code then
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
+			print(string.format("updateHint: unknown hint status %s for hint on location id %s", hint.status,
+				hint.location))
+		end
+		-- try to "recover" by checking hint.found (older AP versions without hint.status)
+		if hint.found == true then
+			highlight_code = Highlight.None
+		elseif hint.found == false then
+			highlight_code = Highlight.Unspecified
+		else
+			return
+		end
+	end
+	-- get the location mapping for the location id
+	local mapping_entry = LOCATION_MAPPING[hint.location]
+	if not mapping_entry then
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
+			print(string.format("updateHint: could not find location mapping for id %s", hint.location))
+		end
+		return
+	end
+	--get the "highest" highlight value pre section
+	for _, location_table in pairs(mapping_entry) do
+		if location_table then
+			local location_code = location_table[1]
+			-- skip hosted items, they don't support Highlight
+			if location_code and location_code:sub(1, 1) == "@" then
+				-- see if we already set a Highlight for this section
+				local existing_highlight_code = sections_to_update[location_code]
+				if existing_highlight_code then
+					-- make sure we only replace None or "increase" the highlight but never overwrite with None
+					-- this so sections with mulitple mapped locations show the "highest" Highlight and
+					-- only show no Highlight when all hints are found
+					if existing_highlight_code == Highlight.None or (existing_highlight_code < highlight_code and highlight_code ~= Highlight.None) then
+						sections_to_update[location_code] = highlight_code
+					end
+				else
+					sections_to_update[location_code] = highlight_code
+				end
+			end
+		end
+	end
+end
+
 -- add AP callbacks
 -- un-/comment as needed
 Archipelago:AddClearHandler("clear handler", onClear)
@@ -268,5 +397,7 @@ end
 if AUTOTRACKER_ENABLE_LOCATION_TRACKING then
 	Archipelago:AddLocationHandler("location handler", onLocation)
 end
+Archipelago:AddRetrievedHandler("retrieved handler", onDataStorageUpdate)
+Archipelago:AddSetReplyHandler("set reply handler", onDataStorageUpdate)
 -- Archipelago:AddScoutHandler("scout handler", onScout)
 -- Archipelago:AddBouncedHandler("bounce handler", onBounce)
